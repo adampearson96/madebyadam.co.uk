@@ -31,10 +31,19 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-nprogress`,
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        color: `tomato`,
-        showSpinner: false,
+        name: "Made by Adam",
+        short_name: "mba.",
+        start_url: "/",
+        background_color: "#634de2",
+        theme_color: "#fff",
+        // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
+        // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
+        display: "fullscreen",
+        orientation: "portrait",
+        splash_pages: null,
+        icon: `src/media/icon-512x512.png`,
       },
     },
   ]
