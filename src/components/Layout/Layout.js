@@ -1,7 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import useSiteMetadata from './SiteMetadata';
-import Navbar from '../components/Navbar/Navbar';
+import useSiteMetadata from '../SiteMetadata';
+import Navbar from '../Navbar/Navbar';
+import '../../scss/global.scss';
 
 const Layout = ({ children }) => {
 
