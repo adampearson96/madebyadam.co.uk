@@ -27,7 +27,7 @@ class Navbar extends React.Component {
           <div className="site-logo">
             <Link to="/">mba.</Link>
           </div>
-          <button className="mobile-menu" onClick={() => this.toggleNavbar()}>
+          <button className="mobile-menu" name="Mobile Menu Toggle" onClick={() => this.toggleNavbar()}>
             <span></span>
             <span></span>
             <span></span>
