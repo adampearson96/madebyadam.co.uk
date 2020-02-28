@@ -9,7 +9,7 @@ module.exports = {
   siteMetadata: {
     title: 'Made by Adam.',
     description: 'Frontend Web Developer based in Leeds, UK.',
-    image: ''
+    image: '',
   },
   plugins: [
     {

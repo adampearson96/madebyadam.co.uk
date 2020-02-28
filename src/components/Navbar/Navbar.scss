@@ -11,9 +11,6 @@ header {
   background-color: $mba-white;
   z-index: 10;
   @include devices(computer) {
-    position: relative;
-    top: unset;
-    left: unset;
     border-bottom: none;
   }
   .outer-container {

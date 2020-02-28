@@ -1,0 +1,13 @@
+@import "../../scss/global.scss";
+
+.social-media-bar {
+  display: block;
+  .social-media {
+    margin: $padding-small $padding-small $padding-small 0;
+    text-align: left;
+    width: 100%;
+    @include devices(ipad) {
+      width: auto;
+    }
+  }
+}

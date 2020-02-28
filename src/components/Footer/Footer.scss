@@ -1,0 +1,54 @@
+@import "../../scss/global.scss";
+
+footer {
+  display: block;
+  position: relative;
+  border-top: 1px solid $mba-grey;
+  .outer-container {
+    display: flex;
+    flex-flow: column;
+    padding: $padding-medium;
+    .social-media {
+      display: block;
+      h6 {
+        display: block;
+        text-align: center;
+        color: $mba-dark-grey;
+        font-size: .5rem;
+        line-height: 1;
+        font-weight: 500;
+      }
+      .links {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+        a {
+          display: block;
+          flex: 0 0 auto;
+          color: $mba-black;
+          font-size: 0;
+          line-height: 1;
+          margin: 0 .5rem 0 0 ;
+          img {
+            display: block;
+            width: auto;
+            height: 30px;
+          }
+          &:last-child {
+            margin: 0;
+          }
+        }
+      }
+    }
+    .copyright {
+      flex: 0 0 auto;
+      width: 100%;
+      margin-top: $padding-extra-large;
+      font-size: 0.8rem;
+      line-height: 1;
+      text-align: center;
+    }
+  }
+  
+}

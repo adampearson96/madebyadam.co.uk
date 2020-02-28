@@ -1,0 +1,42 @@
+@import "global";
+
+body {
+  padding-top: 67px;
+}
+.hero-section {
+  display: flex;
+  flex-flow: column nowrap;
+  position: relative;
+  width: 100%;
+  @include devices(computer) {
+    flex-flow: row nowrap;
+  }
+  .left-column {
+    flex: 0 1 auto;
+    padding: $padding-extra-large;
+    h1 {
+      font-size: 1.5rem;
+      line-height: 1.35;
+      font-weight: 400;
+      span {
+        display: block;
+        font-size: 3rem;
+        line-height: 1.35;
+        font-weight: 400;
+      }
+    }
+    p {
+      line-height: 1.5;
+    }
+    @include devices(computer) {
+      width: 60%;
+    }
+  }
+  .right-column {
+    flex: 0 1 auto;
+    padding: $padding-extra-large;
+    @include devices(computer) {
+      width: 40%;
+    }
+  }
+}

@@ -1,7 +1,13 @@
-button {
+button,
+.btn {
   outline: none;
   border-radius: 0;
   border: none;
   padding: 0;
   margin: 0;
+  background: $mba-purple;
+  padding: $padding-small $padding-medium;
+  color: $mba-white;
+  font-size: 1rem;
+  line-height: 1;
 }
