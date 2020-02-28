@@ -15,19 +15,19 @@ const Footer = () => {
           <h6>Social media</h6>
           <div class="links">
             <a href="https://www.facebook.com/adam.pearson.1996" class="facebook">
-              <img src={facebook} />
+              <img src={facebook} alt="" />
               Facebook
               </a>
             <a href="https://twitter.com/adampearson0796" class="twitter">
-              <img src={twitter} />
+              <img src={twitter} alt="" />
               Twitter
             </a>
             <a href="https://www.instagram.com/adampearson96/" class="instagram">
-              <img src={instagram} />
+              <img src={instagram} alt="" />
               Instagram
             </a>
             <a href="https://www.linkedin.com/in/adam-pearson-511569b2/" class="linkedin">
-              <img src={linkedin} />
+              <img src={linkedin} alt="" />
               LinkedIn
             </a>
           </div>
