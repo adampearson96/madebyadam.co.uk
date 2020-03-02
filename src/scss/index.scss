@@ -46,3 +46,61 @@ body {
     }
   }
 }
+.biography {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-flow: column nowrap;
+  background-color: $mba-grey;
+  @include devices(computer) {
+    flex-flow: row nowrap;
+    align-items: center;
+  }
+  .left-column {
+    flex: 0 1 auto;
+    padding: 0 $padding-extra-large;
+    font-size: 0;
+    img {
+      width: 100%;
+      height: auto;
+      margin: auto;
+    }
+    @include devices(ipad) {
+      display: none;
+    }
+    @include devices(computer) {
+      display: block;
+      width: 55%;
+    }
+  }
+  .right-column {
+    flex: 0 1 auto;
+    padding: $padding-extra-large;
+    p {
+      font-size: 1.25rem;
+      line-height: 1.5;
+      span {
+        font-size: 1.25rem;
+        line-height: 1.5;
+        text-decoration: underline;
+        color: $mba-purple;
+        font-weight: 500;
+      }
+    }
+    @include devices(ipad) {
+      width: 100%;
+    }
+    @include devices(computer) {
+      width: 45%;
+      p {
+        font-size: 2rem;
+        line-height: 1.5;
+        span {
+          
+          font-size: 2rem;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+}

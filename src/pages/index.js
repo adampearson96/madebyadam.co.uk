@@ -5,7 +5,7 @@ import GetInTouchHero from '../components/GetInTouchHero/GetInTouchHero';
 import "../scss/index.scss";
 
 import mbaIphone from "../media/mba-iphone-1440px.webp";
-
+import me from "../media/me.webp";
 class Index extends React.Component {
   render() {
     return (
@@ -19,6 +19,14 @@ class Index extends React.Component {
           </div>
           <div class="right-column">
             <img src={mbaIphone} alt="" />
+          </div>
+        </section>
+        <section className="biography">
+          <div className="left-column">
+            <img src={me} alt="" />
+          </div>
+          <div className="right-column">
+            <p>I like to use modern technology to create clean, crisp and engaging websites with a focus on <span>UX</span> and <span>performance.</span></p>
           </div>
         </section>
         <GetInTouchHero />
