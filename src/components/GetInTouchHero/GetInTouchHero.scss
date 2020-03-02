@@ -6,4 +6,63 @@
   width: 100%;
   background-color: $mba-purple;
   padding: $padding-large;
+  .outer-container {
+    @include devices(computer) {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    h3 {
+      display: block;
+      font-size: 1rem;
+      line-height: 1;
+      color: $mba-white;
+      @include devices(computer) {
+        flex: 0 0 auto;
+        font-size: 1.75rem;
+        line-height: 1;
+        margin: 0 $padding-medium 0 0;
+      }
+    }
+    form {
+      display: flex;
+      flex-flow: column nowrap;
+      @include devices(ipad) {
+        flex-flow: row nowrap;
+      }
+      @include devices(computer) {
+        flex: 0 1 auto;
+      }
+      label {
+        display: block;
+        flex: 0 0 auto;
+        font-size: 0;
+        @include devices(ipad) {
+          flex: 0 1 auto;
+          margin-right: 1.5rem;
+        }
+        input {
+          display: block;
+          width: 100%;
+          font-size: 1rem;
+          line-height: 3;
+          margin-bottom: $padding-medium;
+          border: none;
+          padding: 0 $padding-small;
+          @include devices(ipad) {
+            margin-bottom: unset;
+          }
+        }
+      }
+      button {
+        background-color: $mba-white;
+        color: $mba-black;
+        @include devices(ipad) {
+          flex: 0 1 auto;
+          min-width: 199px;
+        }
+      }
+    }
+  }
 }

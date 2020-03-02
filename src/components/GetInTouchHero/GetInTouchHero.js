@@ -25,12 +25,14 @@ class GetInTouchHero extends React.Component {
     return (
       <section id="get-in-touch-hero">
         <div class="outer-container">
-          <form>
+          <h3>Get in touch</h3>
+          <form onSubmit={this.handleSubmit}>
             <label>
               Name
               <input
                 type="text"
                 name="name"
+                placeholder="name"
                 value={this.state.name}
                 onChange={this.handleInputChange} />
             </label>
@@ -39,10 +41,11 @@ class GetInTouchHero extends React.Component {
               <input
               type="email" 
               name="email"
+              placeholder="email"
               value={this.state.email}
               onChange={this.handleInputChange} />
             </label>
-            <button type="submit" onClick={this.handleSubmit()}>Submit</button>
+            <button type="submit">Submit</button>
           </form>
         </div>
       </section>

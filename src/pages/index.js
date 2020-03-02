@@ -4,6 +4,8 @@ import SocialMediaBar from '../components/SocialMediaBar/SocialMediaBar';
 import GetInTouchHero from '../components/GetInTouchHero/GetInTouchHero';
 import "../scss/index.scss";
 
+import mbaIphone from "../media/mba-iphone-1440px.webp";
+
 class Index extends React.Component {
   render() {
     return (
@@ -16,7 +18,7 @@ class Index extends React.Component {
             <SocialMediaBar />
           </div>
           <div class="right-column">
-            
+            <img src={mbaIphone} alt="" />
           </div>
         </section>
         <GetInTouchHero />

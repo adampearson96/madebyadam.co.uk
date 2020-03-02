@@ -29,14 +29,20 @@ body {
       line-height: 1.5;
     }
     @include devices(computer) {
-      width: 60%;
+      width: 40%;
     }
   }
   .right-column {
     flex: 0 1 auto;
     padding: $padding-extra-large;
+    font-size: 0;
+    img {
+      width: 100%;
+      height: auto;
+      margin: auto;
+    }
     @include devices(computer) {
-      width: 40%;
+      width: 60%;
     }
   }
 }
