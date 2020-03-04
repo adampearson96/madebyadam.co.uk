@@ -1,36 +1,69 @@
 import React from "react"
-import Layout from '../components/Layout/Layout';
-import SocialMediaBar from '../components/SocialMediaBar/SocialMediaBar';
-import GetInTouchHero from '../components/GetInTouchHero/GetInTouchHero';
+import { graphql } from "gatsby"
+import Img from "gatsby-image"
+import Layout from "../components/Layout/Layout"
+import SocialMediaBar from "../components/SocialMediaBar/SocialMediaBar";
+import GetInTouchHero from "../components/GetInTouchHero/GetInTouchHero"
 import "../scss/index.scss";
-import mbaIphone from "../media/mba-iphone-1440px.webp";
-class Index extends React.Component {
-  render() {
-    return (
-      <Layout>
-        <section className="hero-section">
-          <div className="left-column">
-            <h1><span>Hello,</span> I'm Adam Pearson</h1>
-            <p>Just an ambitious 23 year old web developer from Leeds, UK.</p>
-            <p>With over 5 years experience in Web Development, I'm looking for a new challenge which will take my career to the next level.</p>
-            <SocialMediaBar />
-          </div>
-          <div className="right-column">
-            <img src={mbaIphone} alt="" />
-          </div>
-        </section>
-        <section className="biography">
-          <div className="left-column">
-            
-          </div>
-          <div className="right-column">
-            <p>I like to use modern technology to create clean, crisp and engaging websites with a focus on <span>engagement</span>, <span>UX</span> and <span>performance.</span></p>
-          </div>
-        </section>
-        <GetInTouchHero />
-      </Layout>
-    )
-  }
+
+export default ({ data }) => {
+  const post = data.markdownRemark.frontmatter
+  return (
+    <Layout>
+      <section className="hero-section">
+        <div className="left-column">
+          <h1><span>{post.herosection.headinglarge},</span> {post.herosection.headingsmall}</h1>
+          <p>{post.herosection.description01}</p>
+          <p>{post.herosection.description02}</p>
+          <SocialMediaBar />
+        </div>
+        <div className="right-column">
+          <Img fluid={post.herosection.image.childImageSharp.fluid} alt="" />
+        </div>
+      </section>
+      <section className="biography">
+        <div className="left-column">
+        <Img 
+          fluid={post.section02.image.childImageSharp.fluid} alt="" />
+        </div>
+        <div 
+          className="right-column"
+          dangerouslySetInnerHTML={{ __html: post.section02.description }}>
+        </div>
+      </section>
+      <GetInTouchHero />
+    </Layout>
+  )
 }
 
-export default Index;
+export const query = graphql`
+  query {
+    markdownRemark(frontmatter: {title: {eq: "Home"}}) {
+      frontmatter {
+        herosection {
+          headinglarge
+          headingsmall
+          description01
+          description02
+          image {
+            childImageSharp {
+              fluid(maxWidth: 1440, quality: 100 ) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+        section02 {
+          description
+          image {
+            childImageSharp {
+              fluid(maxWidth: 1440, quality: 100 ) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
