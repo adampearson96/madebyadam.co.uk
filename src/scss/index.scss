@@ -60,6 +60,7 @@ body {
     flex: 0 1 auto;
     padding: 0 $padding-extra-large;
     font-size: 0;
+    order: 2;
     img {
       width: 100%;
       height: auto;
@@ -71,11 +72,13 @@ body {
     @include devices(computer) {
       display: block;
       width: 55%;
+      order: 1;
     }
   }
   .right-column {
     flex: 0 1 auto;
     padding: $padding-extra-large;
+    order: 1;
     p {
       font-size: 1.25rem;
       line-height: 1.5;
@@ -92,6 +95,7 @@ body {
     }
     @include devices(computer) {
       width: 45%;
+      order: 2;
       p {
         font-size: 2rem;
         line-height: 1.5;
