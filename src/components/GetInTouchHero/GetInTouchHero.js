@@ -24,7 +24,7 @@ class GetInTouchHero extends React.Component {
   render() {
     return (
       <section id="get-in-touch-hero">
-        <div class="outer-container">
+        <div className="outer-container">
           <h3>Get in touch</h3>
           <form onSubmit={this.handleSubmit}>
             <label>

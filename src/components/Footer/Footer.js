@@ -10,29 +10,29 @@ import linkedin from '../../media/social/linkedin.svg';
 const Footer = () => {
   return (
     <footer>
-      <div class="outer-container">
-        <div class="social-media">
+      <div className="outer-container">
+        <div className="social-media">
           <h6>Social media</h6>
-          <div class="links">
-            <a href="https://www.facebook.com/adam.pearson.1996" class="facebook">
+          <div className="links">
+            <a href="https://www.facebook.com/adam.pearson.1996" className="facebook">
               <img src={facebook} alt="" />
               Facebook
               </a>
-            <a href="https://twitter.com/adampearson0796" class="twitter">
+            <a href="https://twitter.com/adampearson0796" className="twitter">
               <img src={twitter} alt="" />
               Twitter
             </a>
-            <a href="https://www.instagram.com/adampearson96/" class="instagram">
+            <a href="https://www.instagram.com/adampearson96/" className="instagram">
               <img src={instagram} alt="" />
               Instagram
             </a>
-            <a href="https://www.linkedin.com/in/adam-pearson-511569b2/" class="linkedin">
+            <a href="https://www.linkedin.com/in/adam-pearson-511569b2/" className="linkedin">
               <img src={linkedin} alt="" />
               LinkedIn
             </a>
           </div>
         </div>
-        <div class="copyright">
+        <div className="copyright">
           © copyright 2020 
         </div>
       </div>

@@ -4,6 +4,8 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 
+const path = require(`path`)
+
 module.exports = {
   /* Your site config here */
   siteMetadata: {
@@ -12,6 +14,10 @@ module.exports = {
     image: '',
   },
   plugins: [
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-remark`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -19,8 +25,13 @@ module.exports = {
         path: `${__dirname}/src/pages/portfolio`,
       },
     },
-    `gatsby-transformer-remark`,
-    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `media`,
+        path: path.join(__dirname, `src`, `media`),
+      }
+    },
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {

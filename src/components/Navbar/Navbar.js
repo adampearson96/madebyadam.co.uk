@@ -33,7 +33,7 @@ class Navbar extends React.Component {
             <span></span>
           </button>
           <nav className="site-navigation" role="navigation" aria-label="main-navigation">
-            <div class="navigation-items">
+            <div className="navigation-items">
               <Link
                 to="/"
                 activeClassName="active">
