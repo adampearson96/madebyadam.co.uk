@@ -12,7 +12,7 @@ export default ({ data }) => {
     <Layout>
       <section className="hero-section">
         <div className="left-column">
-          <h1><span>{post.herosection.headinglarge},</span> {post.herosection.headingsmall}</h1>
+          <h1 dangerouslySetInnerHTML={{ __html: post.herosection.heading }}></h1>
           <p>{post.herosection.description01}</p>
           <p>{post.herosection.description02}</p>
           <SocialMediaBar />
