@@ -1,5 +1,5 @@
 import React from 'react';
-import './footer.scss';
+import './Footer.scss';
 
 /* Images */
 import facebook from '../../media/social/facebook.svg';
