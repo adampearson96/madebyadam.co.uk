@@ -41,8 +41,7 @@ export const query = graphql`
     markdownRemark(frontmatter: {title: {eq: "Home"}}) {
       frontmatter {
         herosection {
-          headinglarge
-          headingsmall
+          heading
           description01
           description02
           image {
