@@ -10,21 +10,21 @@ export default ({ data }) => {
 
   let websiteLink = '';
 
-  if (post.websiteurl == '') {
+  if (post.websiteurl === '') {
     websiteLink =
     <section className="website-link-container">
-      <a>
-        <Img fluid={post.thumbnail.childImageSharp.fluid} />
+      <div className="link">
+        <Img fluid={post.thumbnail.childImageSharp.fluid} alt="" />
         <div className="overlay">
           <span>Unfortunately this work is not accessible without an account.</span>
         </div>
-      </a>
+      </div>
     </section>
   } else {
     websiteLink = 
       <section className="website-link-container">
-        <a href={post.websiteurl}>
-          <Img fluid={post.thumbnail.childImageSharp.fluid} />
+        <a className="link" href={post.websiteurl} target="_blank" rel="noopener noreferrer">
+          <Img fluid={post.thumbnail.childImageSharp.fluid} alt="" />
           <div className="overlay">
             <span>Visit website</span>
           </div>
@@ -42,7 +42,7 @@ export default ({ data }) => {
               <p>{post.projectDescription}</p>
             </div>
             <div className="right-column">
-              <Img fluid={post.heroimage.childImageSharp.fluid} />
+              <Img fluid={post.heroimage.childImageSharp.fluid} alt="" />
             </div>
           </div>
         </section>
@@ -53,7 +53,8 @@ export default ({ data }) => {
                 return  <li data-sal="slide-up"
                   data-sal-duration="500"
                   data-sal-delay="600"
-                  data-sal-easing="easeOutQuart">{techStackItem}</li>
+                  data-sal-easing="easeOutQuart"
+                  key={techStackItem}>{techStackItem}</li>
               })
               }
             </ul>
