@@ -7,6 +7,31 @@ import "../scss/portfolioPost.scss"
 
 export default ({ data }) => {
   const post = data.markdownRemark.frontmatter
+
+  let websiteLink = '';
+
+  if (post.websiteurl == '') {
+    websiteLink =
+    <section className="website-link-container">
+      <a>
+        <Img fluid={post.thumbnail.childImageSharp.fluid} />
+        <div className="overlay">
+          <span>Unfortunately this work is not accessible without an account.</span>
+        </div>
+      </a>
+    </section>
+  } else {
+    websiteLink = 
+      <section className="website-link-container">
+        <a href={post.websiteurl}>
+          <Img fluid={post.thumbnail.childImageSharp.fluid} />
+          <div className="overlay">
+            <span>Visit website</span>
+          </div>
+        </a>
+      </section>
+    ;
+  }
   return (
     <Layout>
       <div className="portfolio-post">
@@ -34,6 +59,7 @@ export default ({ data }) => {
             </ul>
           </div>
         </section>
+        {websiteLink}
       </div>
     </Layout>
   )
@@ -61,6 +87,7 @@ export const query = graphql`
         }
         projectDescription
         techStack
+        websiteurl
       }
     }
   }

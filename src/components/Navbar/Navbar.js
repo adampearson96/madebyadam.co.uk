@@ -36,11 +36,6 @@ class Navbar extends React.Component {
           <nav className="site-navigation" role="navigation" aria-label="main-navigation">
             <div className="navigation-items">
               <Link
-                to="/"
-                activeClassName="active">
-                  Biography
-              </Link>
-              <Link
                 to="/#selected-work"
                 activeClassName="active">
                   Portfolio

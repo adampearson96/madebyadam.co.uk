@@ -78,4 +78,54 @@
       }
     }
   }
+  .website-link-container {
+    display: block;
+    position: relative;
+    width: 100%;
+    a {
+      display: block;
+      position: relative;
+      width: 100%;
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+        font-size: 0;
+        pointer-events: none;
+      }
+      .overlay {
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, .9);
+        transition: 300ms all cubic-bezier(0.5, 1, 0.89, 1);
+        span {
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          border: 1px solid $mba-white;
+          color: $mba-white;
+          padding: $padding-small $padding-medium;
+          font-size: 1rem;
+          line-height: 1;
+        }
+      }
+      &:hover {
+        opacity: 1;
+        .overlay {
+          display: block;
+          opacity: 1;
+          visibility: visible;
+          transition: 300ms all cubic-bezier(0.5, 1, 0.89, 1);
+        }
+      }
+    }
+  }
 }

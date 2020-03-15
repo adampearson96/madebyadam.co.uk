@@ -1,6 +1,6 @@
 ---
 title: Easter Egg Generator
-date: "2020-03-01"
+date: "2019-03-01"
 path: "/portfolio/easter-egg"
 thumbnail: ../media/easter-egg/thumbnail.jpg
 heroimage: ../media/easter-egg/heroimage.png
