@@ -41,13 +41,15 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
         fonts: [
-          `spartan:400,500,700`
+          {
+            family: `Spartan`,
+            variants: ['400, 500', '700']
+          },
         ],
-        display: 'swap'
-      }
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
