@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, StaticQuery } from 'gatsby'
 import './Navbar.scss'
 
 class Navbar extends React.Component {
@@ -22,41 +22,55 @@ class Navbar extends React.Component {
 
   render() {
     return (
-      <header className={this.state.navBarActiveClass}>
-        <div className="outer-container">
-          <div className="site-logo">
-            <Link to="/">mba.</Link>
-          </div>
-          <button className="mobile-menu" onClick={() => this.toggleNavbar()}>
-            <span></span>
-            <span></span>
-            <span></span>
-            Menu
-          </button>
-          <nav className="site-navigation" role="navigation" aria-label="main-navigation">
-            <div className="navigation-items">
-              <Link
-                to="/#selected-work"
-                activeClassName="active">
-                  Portfolio
-              </Link>
-              <Link
-                to="/cv"
-                activeClassName="active">
-                  CV
-              </Link>
-              <Link
-                to="/#get-in-touch-hero"
-                activeClassName="active">
-                  Get in touch
-              </Link>
+
+      <StaticQuery
+        query={graphql`
+          query {
+            file(extension: {eq: "pdf"}, name: {eq: "cv-15-03-2020"}) {
+              publicURL
+            }
+          }
+        `}
+        render={data => (
+          <header className={this.state.navBarActiveClass}>
+            <div className="outer-container">
+              <div className="site-logo">
+                <Link to="/">mba.</Link>
+              </div>
+              <button className="mobile-menu" onClick={() => this.toggleNavbar()}>
+                <span></span>
+                <span></span>
+                <span></span>
+                Menu
+              </button>
+              <nav className="site-navigation" role="navigation" aria-label="main-navigation">
+                <div className="navigation-items">
+                  <Link
+                    to="/#selected-work"
+                    activeClassName="active">
+                      Portfolio
+                  </Link>
+                  <a 
+                    href={data.file.publicURL}
+                    download
+                    target="_blank"
+                    rel="noopener noreferrer">
+                      CV
+                  </a>
+                  <Link
+                    to="/#get-in-touch-hero"
+                    activeClassName="active">
+                      Get in touch
+                  </Link>
+                </div>
+                <div className="current-position">
+                  <p><span>Currently open for opportunities</span></p>
+                </div>
+              </nav>
             </div>
-            <div className="current-position">
-              <p><span>Currently open for opportunities</span></p>
-            </div>
-          </nav>
-        </div>
-      </header>
+          </header>   
+        )}
+      />
     )
   }
 }
