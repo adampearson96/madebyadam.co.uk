@@ -4,7 +4,10 @@
   0% {
     left: -100%;
   }
-  75% {
+  50% {
+    left: 100%;
+  }
+  90% {
     left: 100%;
   }
   100% {
@@ -18,7 +21,6 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  padding: $padding-medium;
   border-bottom: 1px solid $mba-grey;
   background-color: $mba-white;
   z-index: 10;
@@ -29,6 +31,7 @@ header {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+    padding: $padding-medium;
     .site-logo {
       flex: 0 0 auto;
       a {

@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import './Navbar.scss';
+import React from 'react'
+import { Link } from 'gatsby'
+import './Navbar.scss'
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -41,7 +41,7 @@ class Navbar extends React.Component {
                   Biography
               </Link>
               <Link
-                to="/portfolio"
+                to="/#selected-work"
                 activeClassName="active">
                   Portfolio
               </Link>
@@ -51,13 +51,13 @@ class Navbar extends React.Component {
                   CV
               </Link>
               <Link
-                to="/"
+                to="/#get-in-touch-hero"
                 activeClassName="active">
                   Get in touch
               </Link>
             </div>
             <div className="current-position">
-              <p>Currently working at <span>Next&amp;Co</span></p>
+              <p><span>Currently open for opportunities</span></p>
             </div>
           </nav>
         </div>

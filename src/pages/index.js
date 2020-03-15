@@ -3,32 +3,59 @@ import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/Layout/Layout"
 import SocialMediaBar from "../components/SocialMediaBar/SocialMediaBar";
+import PortfolioLink from "../components/PortfolioLink/PortfolioLink";
 import GetInTouchHero from "../components/GetInTouchHero/GetInTouchHero"
 import "../scss/index.scss";
 
 export default ({ data }) => {
-  const post = data.markdownRemark.frontmatter
+
+  const posts = data.portfolio.edges
+    .filter(edge => !!edge.node.frontmatter.date)
+    .map(edge => 
+      <PortfolioLink
+        key={edge.node.id}
+        post={edge.node}
+      />)
   return (
     <Layout>
       <section className="hero-section">
-        <div className="left-column">
-          <h1 dangerouslySetInnerHTML={{ __html: post.herosection.heading }}></h1>
-          <p>{post.herosection.description01}</p>
-          <p>{post.herosection.description02}</p>
-          <SocialMediaBar />
-        </div>
-        <div className="right-column">
-          <Img fluid={post.herosection.image.childImageSharp.fluid} alt="" />
+        <div className="outer-container">
+          <div className="left-column">
+            <h1><span>Hello,</span> I'm Adam Pearson</h1>
+            <p>Just an ambitious 23 year old web developer from Leeds, UK.</p>
+            <p>With over 5 years experience in Web Development, I'm looking for a new challenge which will take my career to the next level.</p>
+            <SocialMediaBar />
+          </div>
+          <div className="right-column">
+            <Img fluid={data.image1.childImageSharp.fluid} alt="" />
+          </div>
         </div>
       </section>
       <section className="biography">
-        <div className="left-column">
-        <Img 
-          fluid={post.section02.image.childImageSharp.fluid} alt="" />
+        <div className="outer-container">
+          <div className="left-column"
+            data-sal="fade"
+            data-sal-duration="600"
+            data-sal-delay="300"
+            data-sal-easing="easeOutQuart">
+          <Img 
+            fluid={data.image2.childImageSharp.fluid} alt="" />
+          </div>
+          <div className="right-column" 
+            data-sal="slide-up"
+            data-sal-duration="500"
+            data-sal-delay="600"
+            data-sal-easing="easeOutQuart">
+            <p>I like to use modern technology to create clean, crisp and engaging websites with a focus on <span>engagement</span>, <span>UX</span> and <span>performance</span>.</p>
+          </div>
         </div>
-        <div 
-          className="right-column"
-          dangerouslySetInnerHTML={{ __html: post.section02.description }}>
+      </section>
+      <section id="selected-work" className="portfolio-list">
+        <div className="outer-container">
+          <h2>Selected work</h2>
+          <div className="outer-container">
+            {posts}
+          </div>
         </div>
       </section>
       <GetInTouchHero />
@@ -36,28 +63,36 @@ export default ({ data }) => {
   )
 }
 
+export const squareImage = graphql`
+  fragment squareImage on File {
+    childImageSharp {
+      fluid {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+`
 export const query = graphql`
   query {
-    markdownRemark(frontmatter: {title: {eq: "Home"}}) {
-      frontmatter {
-        herosection {
-          heading
-          description01
-          description02
-          image {
-            childImageSharp {
-              fluid(maxWidth: 1440, quality: 100 ) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-        section02 {
-          description
-          image {
-            childImageSharp {
-              fluid(maxWidth: 1440, quality: 100 ) {
-                ...GatsbyImageSharpFluid
+    image1: file(relativePath: { eq: "mba-iphone.png" }) {
+      ...squareImage
+    }
+    image2: file(relativePath: { eq: "me.png" }) {
+      ...squareImage
+    }
+    portfolio: allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, filter: {fields: {slug: {regex: "/portfolio/"}}}, limit: 8) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date(formatString: "MMMM, YYYY")
+            path
+            thumbnail {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
               }
             }
           }

@@ -1,0 +1,81 @@
+@import "global";
+
+.portfolio-post {
+  .hero-section {
+    display: block;
+    position: relative;
+    width: 100%;
+    .outer-container {
+      display: flex;
+      flex-flow: column nowrap;
+      width: 100%;
+      @include devices(computer) {
+        flex-flow: row nowrap;
+      }
+      .left-column {
+        flex: 0 1 auto;
+        padding: $padding-extra-large;
+        align-self: center;
+        h1 {
+          font-size: 3rem;
+          line-height: 1.35;
+          font-weight: 400;
+        }
+        p {
+          line-height: 1.5;
+        }
+        @include devices(computer) {
+          width: 50%;
+        }
+      }
+      .right-column {
+        flex: 0 1 auto;
+        padding: 2.5rem;
+        font-size: 0;
+        img {
+          width: 100%;
+          height: auto;
+          margin: auto;
+        }
+        @include devices(computer) {
+          width: 50%;
+        }
+      }
+    }
+  }
+  .tags {
+    display: block;
+    position: relative;
+    width: 100%;
+    background-color: $mba-grey;
+    .outer-container {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      padding: $padding-small;
+      @include devices(computer) {
+        padding: $padding-large;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex: 0 1 auto;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+        li {
+          flex: 0 1 auto;
+          margin: $padding-extra-small;
+          padding: $padding-extra-small $padding-small;
+          border: 1px solid $mba-purple;
+          border-radius: 8px;
+          background: $mba-white;
+          font-family: 1rem;
+          line-height: 1;
+        }
+      }
+    }
+  }
+}
