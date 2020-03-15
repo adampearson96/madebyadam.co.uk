@@ -131,8 +131,10 @@ body {
     max-width: 1440px;
     margin: 0 auto;
     padding: $padding-large;
-    @include devices(computer) {
+    @include devices (ipad) {
       flex-flow: row wrap;
+    }
+    @include devices(computer) {
       padding: $padding-extra-large;
     }
     .portfolio-item {
@@ -141,6 +143,10 @@ body {
       flex: 0 1 auto;
       width: 100%;
       margin: 0 0 $padding-large 0;
+      @include devices(ipad) {
+        margin: $padding-large;
+        width: calc(50% - (#{$padding-large} * 2));
+      }
       @include devices(computer) {
         margin: $padding-large;
         width: calc(25% - (#{$padding-large} * 2));

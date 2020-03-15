@@ -9,12 +9,14 @@
     display: block;
     width: 100%;
     padding: $padding-small;
+    @include devices(ipad) {
+      padding: $padding-large;
+    }
     @include devices(computer) {
       display: flex;
       flex-flow: row nowrap;
       justify-content: space-between;
       align-items: flex-end;
-      padding: $padding-large;
     }
     h3 {
       display: block;
