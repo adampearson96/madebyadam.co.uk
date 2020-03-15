@@ -26,7 +26,7 @@ class GetInTouchHero extends React.Component {
       <section id="get-in-touch-hero">
         <div className="outer-container">
           <h3>Get in touch</h3>
-          <form name="Get in touch" netlify action="/success">
+          <form method="POST" data-netlify="true" name="Get in touch" action="/success">
             <label>
               Name
               <input
