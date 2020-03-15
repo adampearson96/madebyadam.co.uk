@@ -74,14 +74,14 @@ export const query = graphql`
         title
         thumbnail {
           childImageSharp {
-            fluid {
+            fluid(maxWidth: 2880) {
               ...GatsbyImageSharpFluid
             }
           }
         }
         heroimage {
           childImageSharp {
-            fluid {
+            fluid(maxWidth: 720) {
               ...GatsbyImageSharpFluid
             }
           }

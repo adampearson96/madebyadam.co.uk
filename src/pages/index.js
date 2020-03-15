@@ -65,7 +65,7 @@ export default ({ data }) => {
 export const squareImage = graphql`
   fragment squareImage on File {
     childImageSharp {
-      fluid {
+      fluid(maxWidth: 720) {
         ...GatsbyImageSharpFluid
       }
     }
