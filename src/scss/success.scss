@@ -1,0 +1,33 @@
+@import "global";
+
+.success-page {
+  .hero-section {
+    display: block;
+    width: 100%;
+    background-color: $mba-grey;
+    .outer-container {
+      display: flex;
+      width: 100%;
+      flex-flow: column nowrap;
+      @include devices(computer) {
+        flex-flow: row nowrap;
+        align-items: center;
+      }
+      .col-one {
+        flex: 0 1 auto;
+        padding: $padding-small;
+        @include devices(computer) {
+          padding: $padding-extra-large;
+        }
+        .btn {
+          display: inline-block;
+        }
+      }
+      .col-two {
+        display: block;
+        flex: 0 1 auto;
+        width: 100%;
+      }
+    }
+  }
+}
