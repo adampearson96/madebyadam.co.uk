@@ -63,9 +63,6 @@ class Navbar extends React.Component {
                       Get in touch
                   </Link>
                 </div>
-                <div className="current-position">
-                  <p><span>Currently open for opportunities</span></p>
-                </div>
               </nav>
             </div>
           </header>   

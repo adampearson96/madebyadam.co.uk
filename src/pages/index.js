@@ -23,6 +23,7 @@ export default ({ data }) => {
             <h1><span>Hello,</span> I'm Adam Pearson</h1>
             <p>Just an ambitious 23 year old web developer from Leeds, UK.</p>
             <p>With over 5 years experience in Web Development, I'm looking for a new challenge which will take my career to the next level.</p>
+            <p><strong>Currently open for opportunities</strong></p>
             <a className="btn get-in-touch" href="/#get-in-touch-hero">Get in touch</a>
           </div>
           <div className="right-column">
