@@ -80,7 +80,7 @@ export const query = graphql`
     image2: file(relativePath: { eq: "me.png" }) {
       ...squareImage
     }
-    portfolio: allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, filter: {fields: {slug: {regex: "/portfolio/"}}}, limit: 8) {
+    portfolio: allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, filter: {fields: {slug: {regex: "/portfolio/"}}}, limit: 12) {
       edges {
         node {
           id
